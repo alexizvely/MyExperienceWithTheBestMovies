@@ -3,7 +3,7 @@ var HelloWorldModel = (function (_super) {
     __extends(HelloWorldModel, _super);
     function HelloWorldModel() {
         _super.call(this);
-        this.counter = 42;
+        this.counter = 40;
         this.set("message", this.counter + " taps left");
     }
     HelloWorldModel.prototype.tapAction = function () {
