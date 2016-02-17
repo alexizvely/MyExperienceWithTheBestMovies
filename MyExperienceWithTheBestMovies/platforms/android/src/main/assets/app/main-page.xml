@@ -1,7 +1,32 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<!-- <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout>
+    <Button text="Get movies" tap="movies" />
+  </StackLayout>
+</Page> -->
+
+<Page loaded="pageLoaded">
+    <StackLayout>
+       <ListView items="{{ moviesList }}" itemTap="onItemTap">
+			<ListView.itemTemplate>
+				<StackLayout orientation="horizontal"  >
+					<Image  src="{{img}}" />
+					<StackLayout orientation="vertical" >
+						<Label id="name" text="{{name}}" />
+						<Label id="year" text="{{ year }}" />
+						<Label id="director" text="{{ director }}" />
+					</StackLayout>
+					<Label id="watched" text="Not watched" />
+				</StackLayout>
+			</ListView.itemTemplate>
+		</ListView>
+    </StackLayout>
+</Page>
+
+
+<!-- <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout>
     <Label text="Tap the button" class="title"/>
     <Button text="TAP" tap="{{ tapAction }}" />
     <Label text="{{ message }}" class="message" textWrap="true"/>
   </StackLayout>
-</Page>
+</Page> -->
