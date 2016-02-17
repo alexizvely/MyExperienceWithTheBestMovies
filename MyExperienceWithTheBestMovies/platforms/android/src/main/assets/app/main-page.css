@@ -7,13 +7,15 @@ Image {
 
 Label {
 	font-size: 14;
+	color:white;
+	text-decoration: bold;
 	vertical-align: center;
 	margin-left: 15;
 }
 
 #title {
 	font-size: 20;
-	text-decoration: bold;
+	text-decoration: underline;
 }
 
 #watched {
@@ -27,7 +29,7 @@ Label {
 }
 
 #cell {
-	background-color: #c7e4e8;
+	background-color: #555555;
 	border-width: 1;
 	border-color:gray;
 }
