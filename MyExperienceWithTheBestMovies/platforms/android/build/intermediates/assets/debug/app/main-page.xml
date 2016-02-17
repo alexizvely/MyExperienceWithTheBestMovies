@@ -9,11 +9,11 @@
        <ListView items="{{ moviesList }}" itemTap="onItemTap">
 			<ListView.itemTemplate>
 				<StackLayout orientation="horizontal"  >
-					<Image  src="{{img}}" />
+					<Image  src="~/images/godfather.jpg" stretch="aspectFill"/>
 					<StackLayout orientation="vertical" >
-						<Label id="name" text="{{name}}" />
-						<Label id="year" text="{{ year }}" />
-						<Label id="director" text="{{ director }}" />
+						<Label id="title" text="{{'Title: '+ title }}" />
+						<Label id="year" text="{{'Year: '+ year }}" />
+						<Label id="director" text="{{'Director: '+ director }}" />
 					</StackLayout>
 					<Label id="watched" text="Not watched" />
 				</StackLayout>
