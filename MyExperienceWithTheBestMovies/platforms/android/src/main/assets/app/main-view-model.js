@@ -117,18 +117,40 @@ var moviesList = [
 
 var mainViewModel = new observable({
   filter_string: '',
+  current_page: 1,
+  last_page: 1,
   onLvItemTap: onLvItemTap,
   pageTransitionData: pageTransitionData,
   onButtonItemTap: onButtonItemTap,
   moviesList: []
 });
 
-mainViewModel.addEventListener(observable.propertyChangeEvent, function (pcd) {
+mainViewModel.addEventListener(observable.propertyChangeEvent, function (args) {
   console.log('changed');
-  if(pcd.propertyName == 'filter_string'){
+  if(args.propertyName === 'filter_string'){
       updateList();
     }
+    if(args.propertyName === 'current_page'){
+
+
+        displayPage();
+      }
 });
+
+function displayPage(){
+  console.log('main page -> displayPage');
+  mainViewModel.moviesList=[];
+  var page = +mainViewModel.current_page;
+  console.log(page);
+  if(isNaN(page) || page<1){
+    page = +mainViewModel.last_page;
+  }
+  console.log(page);
+  for(var i=(page-1)*4, len=(page-1)*4 + 4; i<len; i+=1){
+    mainViewModel.moviesList.push(moviesList[i]);
+  }
+  mainViewModel.last_page = page;
+}
 
 function getMovieDataById(id){
   console.log('main page -> getMovieDataById');
@@ -140,7 +162,7 @@ function getMovieDataById(id){
 }
 
 function updateList(){
-  console.log('updateList');
+  console.log('main page -> updateList');
   mainViewModel.moviesList=[];
   for(var i in moviesList){
      if(moviesList[i].title.indexOf(mainViewModel.filter_string) > -1){
@@ -181,6 +203,7 @@ function pageTransitionData(args, pageString){
 };
 
 updateList();
+displayPage(1);
 exports.getMovieDataById = mainViewModel.pageTransitionData;
 exports.getMovieDataById = getMovieDataById;
 exports.onLvItemTap = onLvItemTap;

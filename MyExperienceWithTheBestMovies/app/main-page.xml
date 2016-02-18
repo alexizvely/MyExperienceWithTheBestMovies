@@ -1,14 +1,15 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout>
       <TextField text="{{filter_string}}"/>
+      <TextField text="{{current_page}}"/>
       <ListView id="mainLv" items="{{moviesList}}">
 			<ListView.itemTemplate>
 				<GridLayout id="{{ idIMDB }}" class="cell" columns = "90, *, *, 100" rows = "50, 25, 25" tap="onLvItemTap">
 					<Image class="image" src="{{image}}" stretch="aspectFill" col = "0" row = "0" rowspan = "3" />
 					<Label class="movie-title" text="{{ title }}" textWrap = "true" col = "1" row = "0" colSpan="2"  />
-					<Label class="year" text="{{'Year: '+ $value.year }}" col = "1" row = "1" />
-					<Label class="imdb" text="{{'Rating: '+ $value.imdbRating }}" col = "2" row = "1" />
-					<Label class="director" text="{{'Director: '+ $value.director }}" textWrap = "true" col = "1" row = "2" colSpan="2" />
+					<Label class="year" text="{{'Year: '+ year }}" col = "1" row = "1" />
+					<Label class="imdb" text="{{'Rating: '+ imdbRating }}" col = "2" row = "1" />
+					<Label class="director" text="{{'Director: '+ director }}" textWrap = "true" col = "1" row = "2" colSpan="2" />
 					<Button class="watched" id="{{ idIMDB }}" text="Not watched" col = "3" row = "0" rowspan = "3" tap="onButtonItemTap"/>
 				</GridLayout>
 			</ListView.itemTemplate>
