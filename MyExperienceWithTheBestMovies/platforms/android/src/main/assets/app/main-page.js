@@ -18,3 +18,4 @@ function pageLoaded(args) {
 
 exports.pageLoaded = pageLoaded;
 exports.onLvItemTap = vmModule.mainViewModel.onLvItemTap;
+exports.onButtonItemTap = vmModule.mainViewModel.onButtonItemTap;

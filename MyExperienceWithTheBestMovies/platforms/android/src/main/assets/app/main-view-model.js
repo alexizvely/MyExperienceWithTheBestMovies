@@ -118,6 +118,8 @@ var moviesList = [
 var mainViewModel = new observable({
   filter_string: '',
   onLvItemTap: onLvItemTap,
+  pageTransitionData: pageTransitionData,
+  onButtonItemTap: onButtonItemTap,
   moviesList: []
 });
 
@@ -148,12 +150,24 @@ function updateList(){
 }
 
 function onLvItemTap(args) {
+  var pageString = "details-page";
+  pageTransitionData(args, pageString);
+};
+
+function onButtonItemTap(args) {
+  var pageString = "my-experience-page";
+  pageTransitionData(args, pageString);
+};
+
+function pageTransitionData(args, pageString){
+  console.log(pageString);
+  var pageName = "./" + pageString;
   var gridLayout = args.object;
   var id = gridLayout.id;
   var movie = getMovieDataById(id);
   console.log('main page-> onLvItemTap, object clicked: ' + id);
   var navigationEntry = {
-          moduleName: "./details-page",
+          moduleName: pageString,
           context: {
             selectedMovie: movie
           },
@@ -162,12 +176,12 @@ function onLvItemTap(args) {
               transition: "flip ",
           }
       };
-
-      var topmost = frameModule.topmost();
-      topmost.navigate(navigationEntry);
+    var topmost = frameModule.topmost();
+    topmost.navigate(navigationEntry);
 };
 
 updateList();
+exports.getMovieDataById = mainViewModel.pageTransitionData;
 exports.getMovieDataById = getMovieDataById;
 exports.onLvItemTap = onLvItemTap;
 exports.mainViewModel = mainViewModel;
