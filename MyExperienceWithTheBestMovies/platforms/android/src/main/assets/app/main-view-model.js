@@ -128,6 +128,15 @@ mainViewModel.addEventListener(observable.propertyChangeEvent, function (pcd) {
     }
 });
 
+function getMovieDataById(id){
+  console.log('main page -> getMovieDataById');
+  for(var i=0, len=moviesList.length; i<len; i+=1){
+    if(moviesList[i].idIMDB === id){
+      return moviesList[i];
+    }
+  }
+}
+
 function updateList(){
   console.log('updateList');
   mainViewModel.moviesList=[];
@@ -141,11 +150,12 @@ function updateList(){
 function onLvItemTap(args) {
   var gridLayout = args.object;
   var id = gridLayout.id;
+  var movie = getMovieDataById(id);
   console.log('main page-> onLvItemTap, object clicked: ' + id);
   var navigationEntry = {
           moduleName: "./details-page",
           context: {
-            selectedId: id
+            selectedMovie: movie
           },
           animated: true,
           navigationTransition: {
@@ -158,5 +168,6 @@ function onLvItemTap(args) {
 };
 
 updateList();
+exports.getMovieDataById = getMovieDataById;
 exports.onLvItemTap = onLvItemTap;
 exports.mainViewModel = mainViewModel;

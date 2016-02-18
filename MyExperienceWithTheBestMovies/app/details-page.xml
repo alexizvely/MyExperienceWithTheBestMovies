@@ -1,5 +1,5 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
   <StackLayout>
-    <Label text="text" class="title"/>
+    <Label text="{{selectedMovie.title}}" class="title"/>
   </StackLayout>
 </Page>
