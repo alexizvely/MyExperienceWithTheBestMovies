@@ -1,40 +1,17 @@
-<!-- <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout>
-    <Button text="Get movies" tap="movies" />
-  </StackLayout>
-</Page> -->
-
-<Page loaded="pageLoaded">
-    <StackLayout>
-       <ListView items="{{ moviesList }}" itemTap="onItemTap">
+      <TextField text="{{filter_string}}"/>
+      <ListView id="mainLv" items="{{moviesList}}">
 			<ListView.itemTemplate>
-				<GridLayout id="cell" columns = "90, *, *, 100" rows = "50, 25, 25" >
-					<Image src="{{image}}" stretch="aspectFill" col = "0" row = "0" rowspan = "3"/>
-					<Label id="title" text="{{ title }}" textWrap = "true" col = "1" row = "0" colSpan="2"  />
-					<Label id="year" text="{{'Year: '+ year }}" col = "1" row = "1" />
-					<Label id="imdb" text="{{'Rating: '+ imdbRating }}" col = "2" row = "1" />
-					<Label id="director" text="{{'Director: '+ director }}" textWrap = "true" col = "1" row = "2" colSpan="2" />
-					<Button id="watched" text="Not watched" col = "3" row = "0" rowspan = "3" />
+				<GridLayout id="{{ idIMDB }}" class="cell" columns = "90, *, *, 100" rows = "50, 25, 25" tap="onLvItemTap">
+					<Image class="image" src="{{image}}" stretch="aspectFill" col = "0" row = "0" rowspan = "3" />
+					<Label class="movie-title" text="{{ title }}" textWrap = "true" col = "1" row = "0" colSpan="2"  />
+					<Label class="year" text="{{'Year: '+ $value.year }}" col = "1" row = "1" />
+					<Label class="imdb" text="{{'Rating: '+ $value.imdbRating }}" col = "2" row = "1" />
+					<Label class="director" text="{{'Director: '+ $value.director }}" textWrap = "true" col = "1" row = "2" colSpan="2" />
+					<Button class="watched" text="Not watched" col = "3" row = "0" rowspan = "3"/>
 				</GridLayout>
 			</ListView.itemTemplate>
 		</ListView>
-    </StackLayout>
+  </StackLayout>
 </Page>
-
-<!-- <Page loaded="pageLoaded">
-    <StackLayout>
-       <ListView items="{{ moviesList }}" itemTap="onItemTap">
-			<ListView.itemTemplate>
-				<StackLayout orientation="horizontal"  >
-					<Image src="{{image}}" stretch="aspectFill"/>
-					<StackLayout orientation="vertical" >
-						<Label id="title" text="{{'Title: '+ title }}" />
-						<Label id="year" text="{{'Year: '+ year }}" />
-						<Label id="director" text="{{'Director: '+ director }}" />
-					</StackLayout>
-					<Label id="watched" text="Not watched" />
-				</StackLayout>
-			</ListView.itemTemplate>
-		</ListView>
-    </StackLayout>
-</Page> -->

@@ -14,3 +14,10 @@ button {
     color: #284848;
     horizontal-align: center;
 }
+
+.image {
+	border-width: 2;
+	border-color: #93937f;
+	border-radius: 5;
+	margin: 5;
+}
