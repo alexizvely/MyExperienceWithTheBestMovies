@@ -1,5 +1,7 @@
 var frameModule = require("ui/frame");
 var observable = require("data/observable").Observable;
+var everlive = require("./app.js").everlive;
+
 var moviesList = [
         { title: "The Shawshank Redemption",
           year: "1994",
