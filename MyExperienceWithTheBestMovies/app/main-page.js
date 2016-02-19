@@ -23,6 +23,7 @@ function pageLoaded(args) {
     var screen = page.getViewById("mainScreen");
     screen.opacity = 0;
     screen.fadeIn(1200);
+//------------------------
 };
 
 exports.pageLoaded = pageLoaded;

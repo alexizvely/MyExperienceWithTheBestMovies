@@ -12,6 +12,6 @@
     </GridLayout>
     <Label row = "2" text="Plot:" textWrap="true" /> 
     <TextView row = "3" class="textual" text="{{selectedMovie.plot}}" textWrap="true" editable="false" onLongPress = "increaseFontSize" onDoubleTap = "decreaseFontSize" />
-    <Button  row = "4" id="experienceButton" text="My experience"/>   
+    <Button  row = "4" id="experienceButton" text="My experience" onTap="experienceButtonTapped"/>   
   </GridLayout>
 </Page>
