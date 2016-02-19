@@ -1,24 +1,9 @@
-Image {
-	border-width: 2;
-	border-color: #93937f;
-	border-radius: 5;
-	margin: 5;
-}
-
-Label {
-	font-size: 14;
-	color:white;
-	text-decoration: bold;
-	vertical-align: center;
-	margin-left: 15;
-}
-
-#title {
+.movie-title {
 	font-size: 20;
 	text-decoration: underline;
 }
 
-#watched {
+.watched {
 	height:40;
 	font-size:10;
 	color: black;
@@ -26,10 +11,4 @@ Label {
 	vertical-align: center;
 	float: right;
 	border-radius: 20;
-}
-
-#cell {
-	background-color: #555555;
-	border-width: 1;
-	border-color:gray;
 }

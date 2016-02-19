@@ -1,15 +1,4 @@
-﻿.title {
-    font-size: 30;
-    horizontal-align: center;
-    margin: 20;
-}
-
-button {
-    font-size: 42;
-    horizontal-align: center;
-}
-
-.message {
+﻿.message {
     font-size: 20;
     color: #284848;
     horizontal-align: center;
@@ -20,4 +9,18 @@ button {
 	border-color: #93937f;
 	border-radius: 5;
 	margin: 5;
+}
+
+.cell {
+    background-color: #555555;
+    border-width: 1;
+    border-color:gray;
+}
+
+Label {
+    font-size: 14;
+    color: #fbfcb5;
+    text-decoration: bold;
+    vertical-align: center;
+    margin-left: 10;
 }
