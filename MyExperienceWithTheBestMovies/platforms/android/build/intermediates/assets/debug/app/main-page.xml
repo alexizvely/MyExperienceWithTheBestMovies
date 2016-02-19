@@ -1,5 +1,5 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
+  <StackLayout id="mainScreen">
       <TextField text="{{filter_string}}"/>
       <ListView id="mainLv" items="{{moviesList}}">
 			<ListView.itemTemplate>
