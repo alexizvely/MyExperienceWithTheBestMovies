@@ -131,8 +131,6 @@ mainViewModel.addEventListener(observable.propertyChangeEvent, function (args) {
       updateList();
     }
     if(args.propertyName === 'current_page'){
-
-
         displayPage();
       }
 });
@@ -141,13 +139,13 @@ function displayPage(){
   console.log('main page -> displayPage');
   mainViewModel.moviesList=[];
   var page = +mainViewModel.current_page;
-  console.log(page);
   if(isNaN(page) || page<1){
     page = +mainViewModel.last_page;
   }
-  console.log(page);
   for(var i=(page-1)*4, len=(page-1)*4 + 4; i<len; i+=1){
-    mainViewModel.moviesList.push(moviesList[i]);
+    if(i<moviesList.length){
+      mainViewModel.moviesList.push(moviesList[i]);
+    }
   }
   mainViewModel.last_page = page;
 }
