@@ -7,6 +7,7 @@ TextView {
 	font-size: 18;
 	color: #fbfcb5;
 	padding:15;
+	height: 100;
 }
 
 .textLabel {
@@ -28,4 +29,8 @@ TextView {
 #title {
 	font-size: 22;
     horizontal-align:center;
+}
+
+#image {
+	height: 150;
 }

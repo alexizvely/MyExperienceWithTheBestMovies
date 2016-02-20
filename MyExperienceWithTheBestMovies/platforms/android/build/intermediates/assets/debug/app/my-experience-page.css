@@ -1,4 +1,31 @@
+Label {
+	font-size: 18;
+	color: #555555;
+}
+
 TextView {
-	font-size: 16;
-	color: white;
+	font-size: 18;
+	color: #fbfcb5;
+	padding:15;
+}
+
+.textLabel {
+	color: #fbfcb5;
+	padding:15;
+}
+
+.expButtons {
+	margin-bottom:15;
+	margin-top:5;
+	height:50;
+	font-size:24;
+	color: #555555;
+	background-color: #555555;
+	vertical-align: center;
+	border-radius: 25;
+}
+
+#title {
+	font-size: 22;
+    horizontal-align:center;
 }

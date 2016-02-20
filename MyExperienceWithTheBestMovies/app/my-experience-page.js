@@ -14,7 +14,7 @@ var badInputEffect;// for bad input sound
 var page;
 var imageBoxXml;
 
-function pageLoaded(args) {
+function onNavigatedTo(args) {
     page = args.object;
     page.bindingContext = pageData;
 
@@ -22,20 +22,15 @@ function pageLoaded(args) {
     imageBoxXml.src ="~/images/imagePlaceholder.png";
 
      //on load animation
-    var pictureBtnToAppear = page.getViewById("pictureButton");
-    pictureBtnToAppear.animate({ backgroundColor: new colorModule.Color("#fad417"), duration: 1400 })
-    .catch(function (e) { console.log(e.message); });
-
-    var noteBtnToAppear = page.getViewById("noteButton");
-    noteBtnToAppear.animate({ backgroundColor: new colorModule.Color("#fad417"), duration: 1400 })
-    .catch(function (e) { console.log(e.message); });
+    animateChangeColorButtonWithId("pictureButton", "#fad417", 1500);
+    animateChangeColorButtonWithId("noteButton", "#fad417", 1500);
 
      //loading sound for btn click
     soundEffect = sound.create("~/sounds/clickedSound.mp3");
     badInputEffect = sound.create("~/sounds/negativeSound.mp3");
     //-----------------------
 }
-exports.pageLoaded = pageLoaded;
+exports.onNavigatedTo = onNavigatedTo;
 
 var pageData = new observable({
     pictureList: new observableArray([
@@ -50,15 +45,17 @@ var pageData = new observable({
 function onTakePictureTap(args){
 	soundEffect.play();
 
-	dialogs.confirm({
+	dialogs.confirm(
+	{
 	  title: "Take picture",
 	  message: "Take picture using device's camera?",
 	  okButtonText: "OK",
-	  cancelButtonText: "Cancel",
-	}).then(function (result) {
-	  console.log("Dialog result: " + result);
+	  cancelButtonText: "Cancel"
+	}
+	).then(function (result) {
+	  		console.log("Dialog result: " + result);
 	  
-		  if (result) {
+		  	if (result) {
 				cameraModule.takePicture({width: 200, height: 200, keepAspectRatio: true})
 				.then(function(picture) {
 			    var imageModule = new imageModule.Image();
@@ -96,14 +93,11 @@ function saveNote(args){
 			if (note.length > 0) {
 			    pageData.notes.push({string: note});
 			    noteWriteField.text="";
-
-			    var toast = toastModule.makeText("Note added.");
-  				toast.show();
+				makeToast("Note added.");
 			} else {
 				badInputEffect.play();
 				dialogs.alert("Zero length notes not allowed!").then(function (result) {
-					var toast = toastModule.makeText("Note scrapped.");
-  					toast.show();
+					makeToast("Note scrapped.");
 				});
 			}
 	    }
@@ -114,7 +108,18 @@ exports.saveNote = saveNote;
 //sample gestures - doubleTap and longPress  also declaired in XML of text field here
 function deleteNote(args) {
     console.log('longPress');
-	var i = args.object.index;
-	console.dir(i);
+	var i = args.object;
+	console.log(i);
 }
 exports.deleteNote = deleteNote;
+
+function makeToast(text){
+    var toast = toastModule.makeText(text);
+    toast.show();
+}
+
+function animateChangeColorButtonWithId(buttonId, color, duration){
+    var btnToAppear = page.getViewById(buttonId);
+    btnToAppear.animate({ backgroundColor: new colorModule.Color(color), duration: duration })
+    .catch(function (e) { console.log(e.message); });
+}

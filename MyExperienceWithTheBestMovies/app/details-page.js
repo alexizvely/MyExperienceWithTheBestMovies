@@ -2,6 +2,7 @@ var vmModule = require("./details-view-model");
 var frameModule = require("ui/frame");
 var colorModule = require("color"); //for animation color change
 var sound = require("nativescript-sound"); // for button click sound
+var toastModule = require("nativescript-toast");  //for toast
 var frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
 var soundEffect;// for button click sound
@@ -44,12 +45,15 @@ exports.experienceButtonTapped = experienceButtonTapped;
 function increaseFontSize(args) {
     console.log('longPress');
 	args.object.fontSize += 1;
+    makeToast("Font increased");
 }
 exports.increaseFontSize = increaseFontSize;
 
 function decreaseFontSize(args) {
     console.log('doubleTap');
 	args.object.fontSize -= 1;
+    makeToast("Font decreased");
 }
 exports.decreaseFontSize = decreaseFontSize;
 //--------------------------
+
