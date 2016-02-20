@@ -9,7 +9,7 @@
 						<GridLayout>
 							<ListView items="{{ pictureList }}">
 								<ListView.itemTemplate>
-									<Label text="{{ image }}" horizontalAlignment="left" verticalAlignment="center"/>
+									<Label text="{{ img }}" horizontalAlignment="left" verticalAlignment="center"/>
 								</ListView.itemTemplate>
 							</ListView>
 						</GridLayout>		
