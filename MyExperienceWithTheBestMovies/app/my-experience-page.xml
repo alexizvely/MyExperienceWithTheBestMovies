@@ -1,7 +1,30 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" class="title"/>
-    <Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ message }}" class="message" textWrap="true"/>
-  </StackLayout>
+	<TabView class="cell">
+		<TabView.items>
+			<TabViewItem title="Pictures">
+				<TabViewItem.view>
+					<StackLayout>						
+						<Button text="Take Picture" onTap="onTakePictureTap" />
+						<Image id="image" height="100"/>	
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Comments">
+				<TabViewItem.view>
+					<StackLayout>
+						<TextView id="commentWriteField" height="100" />
+						<Button text="Leave comment" onTap="saveComment" />
+						<Label id="showCommentField" text="Saved Comment" />	
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Rate">
+				<TabViewItem.view>
+					<StackLayout>
+						<Slider minValue="0" maxValue="10" value="5" />		
+					</StackLayout>       
+				</TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
 </Page>

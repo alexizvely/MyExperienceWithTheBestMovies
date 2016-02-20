@@ -17,13 +17,17 @@ Label {
     border:none;
 }
 
-#experienceButton{
+#experienceButton {
 	margin-bottom:15;
 	margin-top:5;
 	height:50;
 	font-size:24;
-	color: black;
-	background-color: #fad417;
+	color: #555555;
+	background-color: #555555;
 	vertical-align: center;
 	border-radius: 25;
+}
+
+#detailsPage {
+	opacity: 0;
 }

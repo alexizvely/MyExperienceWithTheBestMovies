@@ -2,7 +2,9 @@ var vmModule = require("./details-view-model");
 var frameModule = require("ui/frame");
 var colorModule = require("color"); //for animation color change
 var sound = require("nativescript-sound"); // for button click sound
-var soundEffect;
+var frameModule = require("ui/frame");
+var topmost = frameModule.topmost();
+var soundEffect;// for button click sound
 
 function onNavigatedTo(args) {
     console.log('details-page-> onNavigatedTo');
@@ -33,6 +35,7 @@ exports.onNavigatedTo = onNavigatedTo;
 function experienceButtonTapped () {
     console.log('experienceButtonTapped');
     soundEffect.play();
+    topmost.navigate("my-experience-page");
 }
 exports.experienceButtonTapped = experienceButtonTapped;
 //--------------------
