@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout id="mainScreen">
-      <TextField text="{{filter_string}}"/>
+      <TextField text="{{filter_string}}" hint="Enter search word here..."/>
       <ListView id="mainLv" items="{{moviesList}}">
 			<ListView.itemTemplate>
 				<GridLayout id="{{ idIMDB }}" class="cell" columns = "90, *, *, 100" rows = "50, 25, 25" tap="onLvItemTap">

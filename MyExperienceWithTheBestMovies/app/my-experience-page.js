@@ -34,9 +34,9 @@ exports.onNavigatedTo = onNavigatedTo;
 
 var pageData = new observable({
     pictureList: new observableArray([
-    	{ img: "test1" },
-        { img: "test2" },
-        { img: "test3" } 
+    	// { img: "test1" },
+     //    { img: "test2" },
+     //    { img: "test3" } 
     ]),
     notes: new observableArray([])
 });
@@ -68,7 +68,6 @@ function onTakePictureTap(args){
 			    imageBoxXml.imageSource = picture;
 			    console.log('picture shown');
 			});
-
 		}
 	});	
 }
@@ -105,7 +104,7 @@ function saveNote(args){
 }
 exports.saveNote = saveNote;
 
-//sample gestures - doubleTap and longPress  also declaired in XML of text field here
+//sample gestures - longPress  to delete
 function deleteNote(args) {
     console.log('longPress');
 	var i = args.object;

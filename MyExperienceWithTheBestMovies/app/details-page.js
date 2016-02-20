@@ -41,7 +41,7 @@ function experienceButtonTapped () {
 exports.experienceButtonTapped = experienceButtonTapped;
 //--------------------
 
-//sample gestures - doubleTap and longPress  also declaired in XML of text field here
+//sample gestures - doubleTap, longPress, Swipe also declaired in XML of text field here
 function increaseFontSize(args) {
     console.log('longPress');
 	args.object.fontSize += 1;
@@ -57,3 +57,10 @@ function decreaseFontSize(args) {
 exports.decreaseFontSize = decreaseFontSize;
 //--------------------------
 
+function navigateWithSwipe(args){
+    console.log('swipe gesure detected');
+    if(args.direction == 1) {
+         experienceButtonTapped();
+    }
+}
+exports.navigateWithSwipe = navigateWithSwipe;

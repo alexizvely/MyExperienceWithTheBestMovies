@@ -1,5 +1,5 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
-  <GridLayout id="detailsPage" rows = "auto, auto, auto, *, auto" cols = "*" class="cell">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo" >
+  <GridLayout id="detailsPage" rows = "auto, auto, auto, *, auto" cols = "*" class="cell" swipe="navigateWithSwipe">
     <Label text="{{selectedMovie.title}}" class="title" row = "0" textWrap = "true" />
     <GridLayout row = "1" columns = "200, *" rows = "45, 30, 30, 30, 30, 30">
     	<Image class="image" src="{{selectedMovie.image}}" stretch="aspectFill" col = "0" row = "0" rowspan = "6" />

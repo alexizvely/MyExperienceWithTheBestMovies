@@ -12,3 +12,8 @@
 	float: right;
 	border-radius: 20;
 }
+
+TextField {
+	background-color: #ad9f8c;
+	color: #fbfcb5;
+}

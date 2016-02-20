@@ -1,21 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
 	<TabView class="cell">
-		<TabView.items>
-			<TabViewItem title="Pictures">
-				<TabViewItem.view>
-					<StackLayout>	
-						<Image id="image" />					
-						<Button text="Take Picture" class="expButtons" id="pictureButton" onTap="onTakePictureTap" />
-						<StackLayout class="cell">
-							<ListView items="{{ pictureList }}">
-								<ListView.itemTemplate>
-									<Label text="{{ img }}" class="textLabel"/>
-								</ListView.itemTemplate>
-							</ListView>
-						</StackLayout>		
-					</StackLayout>
-				</TabViewItem.view>
-			</TabViewItem>
+		<TabView.items>			
 			<TabViewItem title="Notes">
 				<TabViewItem.view>
 					<StackLayout>
@@ -29,6 +14,21 @@
 								</ListView.itemTemplate>
 							</ListView>
 						</StackLayout>	
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Pictures">
+				<TabViewItem.view>
+					<StackLayout>	
+						<Image id="image" />					
+						<Button text="Take Picture" class="expButtons" id="pictureButton" onTap="onTakePictureTap" />
+						<StackLayout class="cell">
+							<ListView items="{{ pictureList }}">
+								<ListView.itemTemplate>
+									<Label text="{{ img }}" class="textLabel"/>
+								</ListView.itemTemplate>
+							</ListView>
+						</StackLayout>		
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
