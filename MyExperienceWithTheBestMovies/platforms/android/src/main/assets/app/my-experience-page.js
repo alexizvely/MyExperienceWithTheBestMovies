@@ -1,6 +1,7 @@
 var vmModule = require("./main-view-model");
 var observable = require("data/observable").Observable;
 var observableArray = require("data/observable-array").ObservableArray;
+var colorModule = require("color"); //for animation color change
 var cameraModule = require("camera");    // for camera
 var imageModule = require("ui/image");   //for images
 var view = require("ui/core/view");       //for getviewbyId
@@ -20,6 +21,15 @@ function pageLoaded(args) {
 	imageBoxXml = view.getViewById(page, "image");
     imageBoxXml.src ="~/images/imagePlaceholder.png";
 
+     //on load animation
+    var pictureBtnToAppear = page.getViewById("pictureButton");
+    pictureBtnToAppear.animate({ backgroundColor: new colorModule.Color("#fad417"), duration: 1400 })
+    .catch(function (e) { console.log(e.message); });
+
+    var noteBtnToAppear = page.getViewById("noteButton");
+    noteBtnToAppear.animate({ backgroundColor: new colorModule.Color("#fad417"), duration: 1400 })
+    .catch(function (e) { console.log(e.message); });
+
      //loading sound for btn click
     soundEffect = sound.create("~/sounds/clickedSound.mp3");
     badInputEffect = sound.create("~/sounds/negativeSound.mp3");
@@ -33,7 +43,7 @@ var pageData = new observable({
         { img: "test2" },
         { img: "test3" } 
     ]),
-    comments: new observableArray([])
+    notes: new observableArray([])
 });
 
 
@@ -67,36 +77,44 @@ function onTakePictureTap(args){
 }
 exports.onTakePictureTap = onTakePictureTap;
 
-function saveComment(args){
+function saveNote(args){
 	
 	soundEffect.play();
 
 	dialogs.confirm({
-	  title: "Comment",
-	  message: "Add comment?",
+	  title: "Note",
+	  message: "Add note?",
 	  okButtonText: "OK",
 	  cancelButtonText: "Cancel",
 	}).then(function (result) {
 	  console.log("Dialog result: " + result);
 	  
 	  if (result) {
-			var commentWriteField = view.getViewById(page, "commentWriteField");
-			var comment = commentWriteField.text;
+			var noteWriteField = view.getViewById(page, "noteWriteField");
+			var note = noteWriteField.text;
 
-			if (comment.length > 0) {
-			    pageData.comments.push({string: comment});
-			    commentWriteField.text="";
+			if (note.length > 0) {
+			    pageData.notes.push({string: note});
+			    noteWriteField.text="";
 
-			    var toast = toastModule.makeText("Comment added.");
+			    var toast = toastModule.makeText("Note added.");
   				toast.show();
 			} else {
-				dialogs.alert("Zero length comments not allowed!").then(function (result) {
-					badInputEffect.play();
-					var toast = toastModule.makeText("Comment scrapped.");
+				badInputEffect.play();
+				dialogs.alert("Zero length notes not allowed!").then(function (result) {
+					var toast = toastModule.makeText("Note scrapped.");
   					toast.show();
 				});
 			}
 	    }
 	});	
 }
-exports.saveComment = saveComment;
+exports.saveNote = saveNote;
+
+//sample gestures - doubleTap and longPress  also declaired in XML of text field here
+function deleteNote(args) {
+    console.log('longPress');
+	var i = args.object.index;
+	console.dir(i);
+}
+exports.deleteNote = deleteNote;
