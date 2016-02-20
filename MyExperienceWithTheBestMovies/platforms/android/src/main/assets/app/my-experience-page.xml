@@ -5,7 +5,14 @@
 				<TabViewItem.view>
 					<StackLayout>						
 						<Button text="Take Picture" onTap="onTakePictureTap" />
-						<Image id="image" height="100"/>	
+						<Image id="image" height="100"/>
+						<GridLayout>
+							<ListView items="{{ pictureList }}">
+								<ListView.itemTemplate>
+									<Label text="{{ image }}" horizontalAlignment="left" verticalAlignment="center"/>
+								</ListView.itemTemplate>
+							</ListView>
+						</GridLayout>		
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
@@ -14,17 +21,23 @@
 					<StackLayout>
 						<TextView id="commentWriteField" height="100" />
 						<Button text="Leave comment" onTap="saveComment" />
-						<Label id="showCommentField" text="Saved Comment" />	
+						<GridLayout>
+							<ListView items="{{ comments }}">
+								<ListView.itemTemplate>
+									<Label text="{{ string }}" horizontalAlignment="left" verticalAlignment="center"/>
+								</ListView.itemTemplate>
+							</ListView>
+						</GridLayout>	
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
-			<TabViewItem title="Rate">
+<!-- 			<TabViewItem title="Rate">
 				<TabViewItem.view>
 					<StackLayout>
 						<Slider minValue="0" maxValue="10" value="5" />		
 					</StackLayout>       
 				</TabViewItem.view>
-			</TabViewItem>
+			</TabViewItem> -->
 		</TabView.items>
 	</TabView>
 </Page>

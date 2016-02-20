@@ -1,28 +1,30 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
- <TabView>
-   <TabView.items>
-     <TabViewItem title="Pictures">
-       <TabViewItem.view>
-          <Button text="Take Picture" onTap="onTakePictureTap" />
-		<Image id="image" height="100"/>
-       </TabViewItem.view>
-     </TabViewItem>
-     <TabViewItem title="Comments">
-       <TabViewItem.view>
-          <TextView id="commentWriteField" height="100" />
-		<Button text="Leave comment" onTap="saveComment" />
-		<Label id="showCommentField" text="Saved Comment" />
-       </TabViewItem.view>
-     </TabViewItem>
-     <TabViewItem title="Rate">
-       <TabViewItem.view>
-         
-       </TabViewItem.view>
-     </TabViewItem>
-   </TabView.items>
- </TabView>
-	<StackLayout>
-		
-		<Slider minValue="0" maxValue="10" value="5" />
-	</StackLayout>
+	<TabView class="cell">
+		<TabView.items>
+			<TabViewItem title="Pictures">
+				<TabViewItem.view>
+					<StackLayout>						
+						<Button text="Take Picture" onTap="onTakePictureTap" />
+						<Image id="image" height="100"/>	
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Comments">
+				<TabViewItem.view>
+					<StackLayout>
+						<TextView id="commentWriteField" height="100" />
+						<Button text="Leave comment" onTap="saveComment" />
+						<Label id="showCommentField" text="Saved Comment" />	
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Rate">
+				<TabViewItem.view>
+					<StackLayout>
+						<Slider minValue="0" maxValue="10" value="5" />		
+					</StackLayout>       
+				</TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
 </Page>
