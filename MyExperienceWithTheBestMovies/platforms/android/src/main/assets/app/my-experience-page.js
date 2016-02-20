@@ -6,7 +6,10 @@ var imageModule = require("ui/image");   //for images
 var view = require("ui/core/view");       //for getviewbyId
 var dialogs = require("ui/dialogs");      //for alerts
 var toastModule = require("nativescript-toast");  //for toast
+var sound = require("nativescript-sound"); // for button click sound
 
+var soundEffect;// for button click sound
+var badInputEffect;// for bad input sound
 var page;
 var imageBoxXml;
 
@@ -16,6 +19,11 @@ function pageLoaded(args) {
 
 	imageBoxXml = view.getViewById(page, "image");
     imageBoxXml.src ="~/images/imagePlaceholder.png";
+
+     //loading sound for btn click
+    soundEffect = sound.create("~/sounds/clickedSound.mp3");
+    badInputEffect = sound.create("~/sounds/negativeSound.mp3");
+    //-----------------------
 }
 exports.pageLoaded = pageLoaded;
 
@@ -30,6 +38,8 @@ var pageData = new observable({
 
 
 function onTakePictureTap(args){
+	soundEffect.play();
+
 	dialogs.confirm({
 	  title: "Take picture",
 	  message: "Take picture using device's camera?",
@@ -58,6 +68,9 @@ function onTakePictureTap(args){
 exports.onTakePictureTap = onTakePictureTap;
 
 function saveComment(args){
+	
+	soundEffect.play();
+
 	dialogs.confirm({
 	  title: "Comment",
 	  message: "Add comment?",
@@ -73,13 +86,14 @@ function saveComment(args){
 			if (comment.length > 0) {
 			    pageData.comments.push({string: comment});
 			    commentWriteField.text="";
-			    
-			   //  var toast = toastModule.makeText("Comment added.");
-  				// toast.show();
+
+			    var toast = toastModule.makeText("Comment added.");
+  				toast.show();
 			} else {
 				dialogs.alert("Zero length comments not allowed!").then(function (result) {
-					// var toast = toastModule.makeText("Comment scrapped.");
-  			// 		toast.show();
+					badInputEffect.play();
+					var toast = toastModule.makeText("Comment scrapped.");
+  					toast.show();
 				});
 			}
 	    }
