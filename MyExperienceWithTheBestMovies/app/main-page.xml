@@ -1,7 +1,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout id="mainScreen">
-      <TextField text="{{filter_string}}" hint="Enter search word here..."/>
-      <ListView id="mainLv" items="{{moviesList}}">
+	<Page.actionBar>
+		<ActionBar title="Movie list" class="actionBar"></ActionBar>
+	</Page.actionBar>
+	<StackLayout id="mainScreen">
+		<TextField text="{{filter_string}}" hint="Enter search word here..."/>
+		<ListView id="mainLv" items="{{moviesList}}">
 			<ListView.itemTemplate>
 				<GridLayout id="{{ idIMDB }}" class="cell" columns = "90, *, *, 100" rows = "50, 25, 25" tap="onLvItemTap">
 					<Image class="image" src="{{image}}" stretch="aspectFill" col = "0" row = "0" rowspan = "3" />
@@ -13,5 +16,5 @@
 				</GridLayout>
 			</ListView.itemTemplate>
 		</ListView>
-  </StackLayout>
+	</StackLayout>
 </Page>

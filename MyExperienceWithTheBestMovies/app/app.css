@@ -17,6 +17,12 @@
     border-color:gray;
 }
 
+.actionBar{
+    background-color:#555555;
+    color: #fbfcb5; 
+    horizontal-align:center;
+}
+
 Label {
     font-size: 14;
     color: #fbfcb5;
