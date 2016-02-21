@@ -1,6 +1,14 @@
-Label {
+/*Label {
 	font-size:18;
 	margin-left: 6;
+}*/
+
+Label {
+    font-size: 18;
+    color: #fbfcb5;
+    text-decoration: bold;
+    vertical-align: center;
+    margin-left: 6;
 }
 
 .title {
@@ -15,6 +23,7 @@ Label {
     color: white;
     text-decoration: none;
     border:none;
+    color: #fbfcb5;
 }
 
 #experienceButton {

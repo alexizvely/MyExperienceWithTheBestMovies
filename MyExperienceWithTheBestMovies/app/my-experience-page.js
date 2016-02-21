@@ -19,7 +19,7 @@ function onNavigatedTo(args) {
     page.bindingContext = pageData;
 
 	imageBoxXml = view.getViewById(page, "image");
-    imageBoxXml.src ="~/images/imagePlaceholder.png";
+//    imageBoxXml.src ="~/images/imagePlaceholder.png";
 
      //on load animation
     animateChangeColorButtonWithId("pictureButton", "#fad417", 1500);
@@ -38,7 +38,10 @@ var pageData = new observable({
      //    { img: "test2" },
      //    { img: "test3" } 
     ]),
-    notes: new observableArray([])
+    notes: new observableArray([]),
+    "sliderValue": 5,
+    "minValue": 0,
+    "maxValue": 10
 });
 
 
@@ -58,15 +61,15 @@ function onTakePictureTap(args){
 		  	if (result) {
 				cameraModule.takePicture({width: 200, height: 200, keepAspectRatio: true})
 				.then(function(picture) {
-			    var imageModule = new imageModule.Image();
-			    imageModule.imageSource = picture;
-			    console.log("Result is an image source instance");
-
-			    pageData.pictureList.push(imageModule);
-				console.log(pageData.pictureList);
-
 			    imageBoxXml.imageSource = picture;
 			    console.log('picture shown');
+
+			 //    var imageModule = new imageModule.Image();
+			 //    imageModule.imageSource = picture;
+			 //    console.log("Result is an image source instance");
+
+			 //    pageData.pictureList.push(imageModule);
+				// console.log(pageData.pictureList.getItem(0));
 			});
 		}
 	});	
@@ -105,12 +108,12 @@ function saveNote(args){
 exports.saveNote = saveNote;
 
 //sample gestures - longPress  to delete
-function deleteNote(args) {
-    console.log('longPress');
-	var i = args.object;
-	console.log(i);
-}
-exports.deleteNote = deleteNote;
+// function deleteNote(args) {
+//     console.log('longPress');
+// 	var i = args.object;
+// 	console.log(i);
+// }
+// exports.deleteNote = deleteNote;
 
 function makeToast(text){
     var toast = toastModule.makeText(text);

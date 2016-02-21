@@ -1,12 +1,21 @@
-Label {
+/*Label {
 	font-size: 18;
 	color: #555555;
+}*/
+
+Label {
+    font-size: 18;
+    color: #555555;
+    text-decoration: bold;
+    vertical-align: center;
+    margin-left: 10;
 }
 
 TextView {
 	font-size: 18;
 	color: #fbfcb5;
 	padding:15;
+	height: 100;
 }
 
 .textLabel {
@@ -28,4 +37,8 @@ TextView {
 #title {
 	font-size: 22;
     horizontal-align:center;
+}
+
+#image {
+	height: 150;
 }

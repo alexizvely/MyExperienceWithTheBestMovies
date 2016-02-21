@@ -1,25 +1,13 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
+	<Page.actionBar>
+		<ActionBar title="Experience" class="actionBar"></ActionBar>
+	</Page.actionBar>
 	<TabView class="cell">
-		<TabView.items>
-			<TabViewItem title="Pictures">
-				<TabViewItem.view>
-					<StackLayout>	
-						<Image id="image" height="100"/>					
-						<Button text="Take Picture" class="expButtons" id="pictureButton" onTap="onTakePictureTap" />
-						<StackLayout class="cell">
-							<ListView items="{{ pictureList }}">
-								<ListView.itemTemplate>
-									<Label text="{{ img }}" class="textLabel"/>
-								</ListView.itemTemplate>
-							</ListView>
-						</StackLayout>		
-					</StackLayout>
-				</TabViewItem.view>
-			</TabViewItem>
+		<TabView.items>			
 			<TabViewItem title="Notes">
 				<TabViewItem.view>
 					<StackLayout>
-						<TextView id="noteWriteField" height="100" hint="Type your note here." />
+						<TextView id="noteWriteField" hint="Type your note here." />
 						<Button text="Add note" class="expButtons" id="noteButton" onTap="saveNote" />
 						<Label id="title" class="textLabel" text="Notes" />
 						<StackLayout class="cell">
@@ -29,6 +17,21 @@
 								</ListView.itemTemplate>
 							</ListView>
 						</StackLayout>	
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Pictures">
+				<TabViewItem.view>
+					<StackLayout>	
+						<Image id="image" />					
+						<Button text="Take Picture" class="expButtons" id="pictureButton" onTap="onTakePictureTap" />
+						<StackLayout class="cell">
+							<ListView items="{{ pictureList }}">
+								<ListView.itemTemplate>
+									<Label text="{{ img }}" class="textLabel"/>
+								</ListView.itemTemplate>
+							</ListView>
+						</StackLayout>		
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>

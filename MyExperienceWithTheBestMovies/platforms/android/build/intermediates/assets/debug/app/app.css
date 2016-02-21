@@ -17,10 +17,9 @@
     border-color:gray;
 }
 
-Label {
-    font-size: 14;
-    color: #fbfcb5;
-    text-decoration: bold;
-    vertical-align: center;
-    margin-left: 10;
+.actionBar{
+    background-color:#555555;
+    color: #fbfcb5; 
+    horizontal-align:center;
 }
+

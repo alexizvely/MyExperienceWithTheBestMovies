@@ -1,6 +1,9 @@
-.movie-title {
+.movieTitle {
 	font-size: 20;
-	text-decoration: underline;
+    color: #fbfcb5;
+    text-decoration: underline;
+    vertical-align: center;
+    margin-left: 10;
 }
 
 .watched {
@@ -16,4 +19,12 @@
 TextField {
 	background-color: #ad9f8c;
 	color: #fbfcb5;
+}
+
+.movieInfo {
+    font-size: 14;
+    color: #fbfcb5;
+    text-decoration: bold;
+    vertical-align: center;
+    margin-left: 10;
 }
