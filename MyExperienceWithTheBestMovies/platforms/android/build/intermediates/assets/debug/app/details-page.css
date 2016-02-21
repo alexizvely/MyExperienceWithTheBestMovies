@@ -1,0 +1,42 @@
+/*Label {
+	font-size:18;
+	margin-left: 6;
+}*/
+
+Label {
+    font-size: 18;
+    color: #fbfcb5;
+    text-decoration: bold;
+    vertical-align: center;
+    margin-left: 6;
+}
+
+.title {
+    font-size: 30;
+    color: #fad417;
+    horizontal-align: center;
+    margin: 10;
+}
+
+.textual {
+    font-size: 16;
+    color: white;
+    text-decoration: none;
+    border:none;
+    color: #fbfcb5;
+}
+
+#experienceButton {
+	margin-bottom:15;
+	margin-top:5;
+	height:50;
+	font-size:24;
+	color: #555555;
+	background-color: #555555;
+	vertical-align: center;
+	border-radius: 25;
+}
+
+#detailsPage {
+	opacity: 0;
+}

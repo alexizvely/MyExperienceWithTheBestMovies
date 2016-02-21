@@ -1,15 +1,4 @@
-﻿.title {
-    font-size: 30;
-    horizontal-align: center;
-    margin: 20;
-}
-
-button {
-    font-size: 42;
-    horizontal-align: center;
-}
-
-.message {
+﻿.message {
     font-size: 20;
     color: #284848;
     horizontal-align: center;
@@ -21,3 +10,16 @@ button {
 	border-radius: 5;
 	margin: 5;
 }
+
+.cell {
+    background-color: #555555;
+    border-width: 1;
+    border-color:gray;
+}
+
+.actionBar{
+    background-color:#555555;
+    color: #fbfcb5; 
+    horizontal-align:center;
+}
+

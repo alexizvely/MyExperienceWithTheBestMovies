@@ -1,7 +1,47 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" class="title"/>
-    <Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ message }}" class="message" textWrap="true"/>
-  </StackLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
+	<Page.actionBar>
+		<ActionBar title="Experience" class="actionBar"></ActionBar>
+	</Page.actionBar>
+	<TabView class="cell">
+		<TabView.items>			
+			<TabViewItem title="Notes">
+				<TabViewItem.view>
+					<StackLayout>
+						<TextView id="noteWriteField" hint="Type your note here." />
+						<Button text="Add note" class="expButtons" id="noteButton" onTap="saveNote" />
+						<Label id="title" class="textLabel" text="Notes" />
+						<StackLayout class="cell">
+							<ListView items="{{ notes }}" onLongPress = "deleteNote">
+								<ListView.itemTemplate>
+									<Label text="{{ string }}" class="textLabel" textWrap="true"/>
+								</ListView.itemTemplate>
+							</ListView>
+						</StackLayout>	
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Pictures">
+				<TabViewItem.view>
+					<StackLayout>	
+						<Image id="image" />					
+						<Button text="Take Picture" class="expButtons" id="pictureButton" onTap="onTakePictureTap" />
+						<StackLayout class="cell">
+							<ListView items="{{ pictureList }}">
+								<ListView.itemTemplate>
+									<Label text="{{ img }}" class="textLabel"/>
+								</ListView.itemTemplate>
+							</ListView>
+						</StackLayout>		
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+<!-- 			<TabViewItem title="Rate">
+				<TabViewItem.view>
+					<StackLayout>
+						<Slider minValue="0" maxValue="10" value="5" />		
+					</StackLayout>       
+				</TabViewItem.view>
+			</TabViewItem> -->
+		</TabView.items>
+	</TabView>
 </Page>
