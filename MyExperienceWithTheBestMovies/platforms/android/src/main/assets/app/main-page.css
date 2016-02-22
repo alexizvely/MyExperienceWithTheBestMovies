@@ -1,9 +1,14 @@
-.movieTitle {
+Label {
+	font-size: 14;
+	color:white;
+	text-decoration: bold;
+	vertical-align: center;
+	margin-left: 15;
+}
+
+.movie-title {
 	font-size: 20;
-    color: #fbfcb5;
-    text-decoration: underline;
-    vertical-align: center;
-    margin-left: 10;
+	text-decoration: underline;
 }
 
 .watched {
@@ -16,15 +21,8 @@
 	border-radius: 20;
 }
 
-TextField {
-	background-color: #ad9f8c;
-	color: #fbfcb5;
-}
-
-.movieInfo {
-    font-size: 14;
-    color: #fbfcb5;
-    text-decoration: bold;
-    vertical-align: center;
-    margin-left: 10;
+.cell {
+	background-color: #555555;
+	border-width: 1;
+	border-color:gray;
 }

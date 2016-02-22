@@ -1,14 +1,11 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.MyExperienceWithTheBestMovies",
-    "tns-android": {
-      "version": "1.5.1"
-    }
-  },
-  "dependencies": {
-    "nativescript-effects": "^0.2.3",
-    "nativescript-sound": "^1.0.4",
-    "nativescript-toast": "^1.2.0",
-    "tns-core-modules": "1.5.2"
-  }
+	"nativescript": {
+		"id": "org.nativescript.MyExperienceWithTheBestMovies",
+		"tns-android": {
+			"version": "1.5.1"
+		}
+	},
+	"dependencies": {
+		"tns-core-modules": "1.5.2"
+	}
 }

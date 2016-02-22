@@ -1,12 +1,24 @@
-.movieTitle {
-	font-size: 20;
-    color: #fbfcb5;
-    text-decoration: underline;
-    vertical-align: center;
-    margin-left: 10;
+Image {
+	border-width: 2;
+	border-color: #93937f;
+	border-radius: 5;
+	margin: 5;
 }
 
-.watched {
+Label {
+	font-size: 14;
+	color:white;
+	text-decoration: bold;
+	vertical-align: center;
+	margin-left: 15;
+}
+
+#title {
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#watched {
 	height:40;
 	font-size:10;
 	color: black;
@@ -16,15 +28,8 @@
 	border-radius: 20;
 }
 
-TextField {
-	background-color: #ad9f8c;
-	color: #fbfcb5;
-}
-
-.movieInfo {
-    font-size: 14;
-    color: #fbfcb5;
-    text-decoration: bold;
-    vertical-align: center;
-    margin-left: 10;
+#cell {
+	background-color: #555555;
+	border-width: 1;
+	border-color:gray;
 }

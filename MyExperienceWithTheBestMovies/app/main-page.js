@@ -1,6 +1,5 @@
 var vmModule = require("./main-view-model");
 var everlive = require("./app.js").everlive;
-var tnsfx = require('nativescript-effects'); //plugin for animation
 var page;
 
 function pageLoaded(args) {
@@ -15,15 +14,6 @@ function pageLoaded(args) {
     }, function(err) {
         console.log(err.message);
     })
-
-
-
-
-//added zoom in on start animation 
-    var screen = page.getViewById("mainScreen");
-    screen.opacity = 0;
-    screen.fadeIn(1200);
-//------------------------
 };
 
 exports.pageLoaded = pageLoaded;

@@ -1,20 +1,7 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo" >
-    <Page.actionBar>
-        <ActionBar title="Movie details" class="actionBar"></ActionBar>
-    </Page.actionBar>
-    <GridLayout id="detailsPage" rows = "auto, auto, auto, *, auto" cols = "*" class="cell" swipe="navigateWithSwipe">
-        <Label text="{{selectedMovie.title}}" class="title" row = "0" textWrap = "true" />
-        <GridLayout row = "1" columns = "200, *" rows = "45, 30, 30, 30, 30, 30">
-           <Image class="image" src="{{selectedMovie.image}}" stretch="aspectFill" col = "0" row = "0" rowspan = "6" />
-           <Label text="{{'Director: '+ selectedMovie.director }}" textWrap = "true" col = "1" row = "0" colSpan="2" />
-           <Label text="{{'Genre: '+ selectedMovie.genre }}" textWrap = "true" col = "1" row = "1" colSpan="2" />
-           <Label text="{{'Year: ' + selectedMovie.year }}" col = "1" row = "2" colSpan="2" />
-           <Label text="{{'Runtime: ' + selectedMovie.runtime + 'm' }}" col = "1" row = "3" colSpan="2" />
-           <Label text="{{'Rating: '+ selectedMovie.imdbRating + '/10'}}" col = "1" row = "4" />   	
-           <Label text="{{'Ranked: '+ selectedMovie.idIMDB }}" col = "1" row = "5" /> 
-       </GridLayout>
-       <Label row = "2" text="Plot:" textWrap="true" /> 
-       <TextView row = "3" class="textual" text="{{selectedMovie.plot}}" textWrap="true" editable="false" onLongPress = "increaseFontSize" onDoubleTap = "decreaseFontSize" />
-       <Button  row = "4" id="experienceButton" text="My experience" onTap="experienceButtonTapped"/>   
-   </GridLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" onNavigatedTo="onNavigatedTo">
+  <StackLayout>
+    <Label text="Hi" class="title"/>
+<!--     <Button text="TAP" tap="{{ tapAction }}" />
+    <Label text="{{ message }}" class="message" textWrap="true"/> -->
+  </StackLayout>
 </Page>
