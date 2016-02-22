@@ -28,3 +28,7 @@ TextField {
     vertical-align: center;
     margin-left: 10;
 }
+
+#mainScreen {
+	background-color: #ad9f8c;
+}

@@ -9,8 +9,8 @@ function pageLoaded(args) {
     console.log('main-page-> pageLoaded');
     page = args.object;
     page.bindingContext = vmModule.mainViewModel;
-    var movies = global.everlive.data('Movie');
 
+    var movies = global.everlive.data('Movie');
     movies.get(null, function(data) {
         console.log('main-page-> pageLoaded: Telerik Backend Services works! Here is the first movie uploaded there: ' + JSON.stringify(data));
     }, function(err) {
@@ -51,7 +51,7 @@ function pageLoaded(args) {
         console.log('main-page-> pageLoaded: users.get: User logged');
       }
     }, function(err){
-      console.log('main-page-> pageLoaded: users.get: ' + err.message);
+      console.log('main-page-> pageLoaded: users.get: error: ' + err.message);
     })
 };
 

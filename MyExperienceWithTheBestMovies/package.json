@@ -8,6 +8,7 @@
   "dependencies": {
     "nativescript-effects": "^0.2.3",
     "nativescript-sound": "^1.0.4",
+    "nativescript-sqlite": "^1.0.8",
     "nativescript-toast": "^1.2.0",
     "tns-core-modules": "1.5.2"
   }

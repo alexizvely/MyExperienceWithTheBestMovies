@@ -13,7 +13,7 @@ function onNavigatedTo(args) {
     var data = vmModule.viewModel;
     data.selectedMovie = args.object.navigationContext.selectedMovie;
     page.bindingContext = vmModule.viewModel;
-    console.log('details-page-> onNavigatedTo: Selected movie: ' + args.object.navigationContext.selectedMovie);
+    console.log('details-page-> onNavigatedTo: Selected movie: ' + args.object.navigationContext.selectedMovie.Title);
 
     //on load animation
     var viewToAppear = page.getViewById('detailsPage');

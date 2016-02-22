@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
 	<Page.actionBar>
-		<ActionBar title="{{'My experience with ' +selectedMovie.title}}" class="actionBar"></ActionBar>
+		<ActionBar title="{{'My experience with ' +selectedMovie.Title}}" class="actionBar"></ActionBar>
 	</Page.actionBar>
 	<TabView class="cell">
 		<TabView.items>

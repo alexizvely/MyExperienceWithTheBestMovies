@@ -10,11 +10,11 @@
            <Label text="{{'Genre: '+ selectedMovie.genre }}" textWrap = "true" col = "1" row = "1" colSpan="2" />
            <Label text="{{'Year: ' + selectedMovie.year }}" col = "1" row = "2" colSpan="2" />
            <Label text="{{'Runtime: ' + selectedMovie.runtime + 'm' }}" col = "1" row = "3" colSpan="2" />
-           <Label text="{{'Rating: '+ selectedMovie.imdbRating + '/10'}}" col = "1" row = "4" />   	
-           <Label text="{{'Ranked: '+ selectedMovie.idIMDB }}" col = "1" row = "5" /> 
+           <Label text="{{'Rating: '+ selectedMovie.imdbRating + '/10'}}" col = "1" row = "4" />
+           <Label text="{{'Ranked: '+ selectedMovie.idIMDB }}" col = "1" row = "5" />
        </GridLayout>
-       <Label row = "2" text="Plot:" textWrap="true" /> 
+       <Label row = "2" text="Plot:" textWrap="true" />
        <TextView row = "3" class="textual" text="{{selectedMovie.plot}}" textWrap="true" editable="false" onLongPress = "increaseFontSize" onDoubleTap = "decreaseFontSize" />
-       <Button  row = "4" id="experienceButton" text="My experience" onTap="experienceButtonTapped"/>   
+       <Button  row = "4" id="experienceButton" text="My experience" onTap="experienceButtonTapped"/>
    </GridLayout>
 </Page>

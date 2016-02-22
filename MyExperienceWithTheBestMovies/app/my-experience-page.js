@@ -104,7 +104,7 @@ function saveNote(args){
 exports.saveNote = saveNote;
 
 
-//sample gestures - longPress  to delete
+// gestures - longPress  to delete
 // function deleteNote(args) {
 //     console.log('longPress');
 // 	var i = args.object;
