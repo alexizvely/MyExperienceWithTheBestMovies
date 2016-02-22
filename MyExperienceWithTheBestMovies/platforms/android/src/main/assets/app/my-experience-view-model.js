@@ -1,7 +1,12 @@
 var observable = require("data/observable").Observable;
 
 var viewModel = new observable({
-    selectedMovie: {}
+    selectedMovie: {},
+    pictureList: [],
+    notes: [],
+    sliderValue: 5,
+    minSliderValue: 0,
+    maxSliderValue: 10
 });
 
 exports.viewModel = viewModel;

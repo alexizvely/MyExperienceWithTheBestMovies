@@ -15,52 +15,41 @@ function onNavigatedTo(args) {
     page.bindingContext = vmModule.viewModel;
     console.log("Selected movie: " + args.object.navigationContext.selectedMovie);
 
-
     //on load animation
     var viewToAppear = page.getViewById("detailsPage");
     var buttonToAppear = page.getViewById("experienceButton");
     viewToAppear.animate({ opacity: 1, duration: 1000 })
     .then(function () { return buttonToAppear.animate({ backgroundColor: new colorModule.Color("#fad417"), duration: 1000 }); })
-    .then(function () { console.log("Animation finished"); })
+    .then(function () { console.log("details-page -> button animation finished"); })
     .catch(function (e) { console.log(e.message); });
-    //--------------------
 
-    //loading sound for btn click
+    // loading sound for button click
     soundEffect = sound.create("~/sounds/clickedSound.mp3");
-    //-----------------------
-}
+};
 
-exports.onNavigatedTo = onNavigatedTo;
-
-// button tapped (sound)
-function experienceButtonTapped () {
-    console.log('experienceButtonTapped');
-    soundEffect.play();
-    topmost.navigate("my-experience-page");
-}
-exports.experienceButtonTapped = experienceButtonTapped;
-//--------------------
-
-//sample gestures - doubleTap, longPress, Swipe also declaired in XML of text field here
+// gestures - doubleTap, longPress, Swipe also declaired in XML of text field here
 function increaseFontSize(args) {
-    console.log('longPress');
+    console.log('details-page -> longPress');
 	args.object.fontSize += 1;
-    makeToast("Font increased");
-}
-exports.increaseFontSize = increaseFontSize;
+    makeToast("Font increased.");
+};
 
 function decreaseFontSize(args) {
     console.log('doubleTap');
 	args.object.fontSize -= 1;
-    makeToast("Font decreased");
-}
-exports.decreaseFontSize = decreaseFontSize;
-//--------------------------
+    makeToast("Font decreased.");
+};
 
 function navigateWithSwipe(args){
-    console.log('swipe gesure detected');
+    console.log('details-page -> swipe gesure detected');
     if(args.direction == 1) {
-         experienceButtonTapped();
+       soundEffect.play();
+       vmModule.viewModel.pageTransitionToExperience();
     }
-}
+};
+
+exports.experienceButtonTapped = vmModule.viewModel.pageTransitionToExperience;
+exports.increaseFontSize = increaseFontSize;
 exports.navigateWithSwipe = navigateWithSwipe;
+exports.decreaseFontSize = decreaseFontSize;
+exports.onNavigatedTo = onNavigatedTo;

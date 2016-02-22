@@ -1,40 +1,21 @@
 var vmModule = require("./my-experience-view-model");
 var frameModule = require("ui/frame");
+var soundEffect;// for button click sound
+var badInputEffect;// for bad input sound
+var imageBoxXml;
+var page;
 
 function onNavigatedTo(args) {
   console.log('my-experience-page-> onNavigatedTo');
-  var page = args.object;
+  page = args.object;
   var data = vmModule.viewModel;
   data.selectedMovie = args.object.navigationContext.selectedMovie;
   page.bindingContext = vmModule.viewModel;
   console.log("Selected movie: " + args.object.navigationContext.selectedMovie);
-}
-
-exports.onNavigatedTo = onNavigatedTo;
 
 
 
-var vmModule = require("./main-view-model");
-var observable = require("data/observable").Observable;
-var observableArray = require("data/observable-array").ObservableArray;
-var colorModule = require("color"); //for animation color change
-var cameraModule = require("camera");    // for camera
-var imageModule = require("ui/image");   //for images
-var view = require("ui/core/view");       //for getviewbyId
-var dialogs = require("ui/dialogs");      //for alerts
-var toastModule = require("nativescript-toast");  //for toast
-var sound = require("nativescript-sound"); // for button click sound
-
-var soundEffect;// for button click sound
-var badInputEffect;// for bad input sound
-var page;
-var imageBoxXml;
-
-function onNavigatedTo(args) {
-    page = args.object;
-    page.bindingContext = pageData;
-
-	imageBoxXml = view.getViewById(page, "image");
+  imageBoxXml = view.getViewById(page, "image");
 //    imageBoxXml.src ="~/images/imagePlaceholder.png";
 
      //on load animation
@@ -46,19 +27,19 @@ function onNavigatedTo(args) {
     badInputEffect = sound.create("~/sounds/negativeSound.mp3");
     //-----------------------
 }
-exports.onNavigatedTo = onNavigatedTo;
 
-var pageData = new observable({
-    pictureList: new observableArray([
-    	// { img: "test1" },
-     //    { img: "test2" },
-     //    { img: "test3" }
-    ]),
-    notes: new observableArray([]),
-    "sliderValue": 5,
-    "minValue": 0,
-    "maxValue": 10
-});
+
+
+var observable = require("data/observable").Observable;
+var observableArray = require("data/observable-array").ObservableArray;
+var colorModule = require("color"); //for animation color change
+var cameraModule = require("camera");    // for camera
+var imageModule = require("ui/image");   //for images
+var view = require("ui/core/view");       //for getviewbyId
+var dialogs = require("ui/dialogs");      //for alerts
+var toastModule = require("nativescript-toast");  //for toast
+var sound = require("nativescript-sound"); // for button click sound
+
 
 
 function onTakePictureTap(args){
@@ -141,3 +122,5 @@ function animateChangeColorButtonWithId(buttonId, color, duration){
     btnToAppear.animate({ backgroundColor: new colorModule.Color(color), duration: duration })
     .catch(function (e) { console.log(e.message); });
 }
+
+exports.onNavigatedTo = onNavigatedTo;

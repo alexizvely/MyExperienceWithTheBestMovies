@@ -117,18 +117,40 @@ var moviesList = [
 
 var mainViewModel = new observable({
   filter_string: '',
+  current_page: 1,
+  last_page: 1,
   onLvItemTap: onLvItemTap,
   pageTransitionData: pageTransitionData,
-  onButtonItemTap: onButtonItemTap,
+  onButtonItemTapTransition: onButtonItemTapTransition,
+  getMovieDataById: getMovieDataById,
+  pageTransitionData: pageTransitionData,
   moviesList: []
 });
 
-mainViewModel.addEventListener(observable.propertyChangeEvent, function (pcd) {
-  console.log('changed');
-  if(pcd.propertyName == 'filter_string'){
+mainViewModel.addEventListener(observable.propertyChangeEvent, function (args) {
+  console.log('main-page -> addEventListener');
+  if(args.propertyName == 'filter_string'){
       updateList();
     }
+  if(args.propertyName === 'current_page'){
+        displayPage();
+      }
 });
+
+function displayPage(){
+  console.log('main page -> displayPage');
+  mainViewModel.moviesList=[];
+  var page = +mainViewModel.current_page;
+  if(isNaN(page) || page<1){
+    page = +mainViewModel.last_page;
+  }
+  for(var i=(page-1)*4, len=(page-1)*4 + 4; i<len; i+=1){
+    if(i<moviesList.length){
+      mainViewModel.moviesList.push(moviesList[i]);
+    }
+  }
+  mainViewModel.last_page = page;
+};
 
 function getMovieDataById(id){
   console.log('main page -> getMovieDataById');
@@ -137,29 +159,30 @@ function getMovieDataById(id){
       return moviesList[i];
     }
   }
-}
+};
 
 function updateList(){
-  console.log('updateList');
+  console.log('main-page -> updateList');
   mainViewModel.moviesList=[];
   for(var i in moviesList){
      if(moviesList[i].title.indexOf(mainViewModel.filter_string) > -1){
        mainViewModel.moviesList.push(moviesList[i]);
      }
   }
-}
+};
 
 function onLvItemTap(args) {
   var pageString = "details-page";
   pageTransitionData(args, pageString);
 };
 
-function onButtonItemTap(args) {
+function onButtonItemTapTransition(args) {
   var pageString = "my-experience-page";
   pageTransitionData(args, pageString);
 };
 
 function pageTransitionData(args, pageString){
+  console.log('main-page -> pageTransitionData');
   console.log(pageString);
   var pageName = "./" + pageString;
   var gridLayout = args.object;
@@ -181,7 +204,5 @@ function pageTransitionData(args, pageString){
 };
 
 updateList();
-exports.getMovieDataById = mainViewModel.pageTransitionData;
-exports.getMovieDataById = getMovieDataById;
-exports.onLvItemTap = onLvItemTap;
+
 exports.mainViewModel = mainViewModel;

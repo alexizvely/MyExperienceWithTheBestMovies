@@ -1,9 +1,9 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
 	<Page.actionBar>
-		<ActionBar title="Experience" class="actionBar"></ActionBar>
+		<ActionBar title="{{'Experience with ' +selectedMovie.title}}" class="actionBar"></ActionBar>
 	</Page.actionBar>
 	<TabView class="cell">
-		<TabView.items>			
+		<TabView.items>
 			<TabViewItem title="Notes">
 				<TabViewItem.view>
 					<StackLayout>
@@ -16,14 +16,14 @@
 									<Label text="{{ string }}" class="textLabel" textWrap="true"/>
 								</ListView.itemTemplate>
 							</ListView>
-						</StackLayout>	
+						</StackLayout>
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
 			<TabViewItem title="Pictures">
 				<TabViewItem.view>
-					<StackLayout>	
-						<Image id="image" />					
+					<StackLayout>
+						<Image id="image" />
 						<Button text="Take Picture" class="expButtons" id="pictureButton" onTap="onTakePictureTap" />
 						<StackLayout class="cell">
 							<ListView items="{{ pictureList }}">
@@ -31,7 +31,7 @@
 									<Label text="{{ img }}" class="textLabel"/>
 								</ListView.itemTemplate>
 							</ListView>
-						</StackLayout>		
+						</StackLayout>
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
@@ -39,10 +39,10 @@
 				<TabViewItem.view>
 					<StackLayout>
 						<Label text="Rate this movie:" class="sliderLabel" textWrap="true" />
-						<Slider minValue="{{ minValue }}" maxValue="{{ maxValue }}" value=" {{ sliderValue }}" />
+						<Slider minValue="{{ minSliderValue }}" maxValue="{{ maxSliderValue }}" value=" {{ sliderValue }}" />
 						<Label text="My rate is:" class="sliderLabel" />
-                        <Label text="{{ sliderValue }}" class="sliderLabel" />	
-					</StackLayout>       
+                        <Label text="{{ sliderValue }}" class="sliderLabel" />
+					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
 		</TabView.items>
