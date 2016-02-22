@@ -188,7 +188,7 @@ function pageTransitionData(args, pageString){
   var gridLayout = args.object;
   var id = gridLayout.id;
   var movie = getMovieDataById(id);
-  console.log('main page-> onLvItemTap, object clicked: ' + id);
+  console.log('main page-> pageTransitionData: object clicked: ' + id);
   var navigationEntry = {
           moduleName: pageString,
           context: {

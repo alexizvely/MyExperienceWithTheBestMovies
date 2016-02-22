@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
 	<Page.actionBar>
-		<ActionBar title="{{'Experience with ' +selectedMovie.title}}" class="actionBar"></ActionBar>
+		<ActionBar title="{{'My experience with ' +selectedMovie.title}}" class="actionBar"></ActionBar>
 	</Page.actionBar>
 	<TabView class="cell">
 		<TabView.items>
@@ -10,13 +10,11 @@
 						<TextView id="noteWriteField" hint="Type your note here." />
 						<Button text="Add note" class="expButtons" id="noteButton" onTap="saveNote" />
 						<Label id="title" class="textLabel" text="Notes" />
-						<StackLayout class="cell">
-							<ListView items="{{ notes }}" onLongPress = "deleteNote">
+							<ListView items="{{ notes }}" onLongPress = "deleteNote" class="cell" id='noteList'>
 								<ListView.itemTemplate>
-									<Label text="{{ string }}" class="textLabel" textWrap="true"/>
+									<Label text="{{ $value }}" class="textLabel" textWrap="true"/>
 								</ListView.itemTemplate>
 							</ListView>
-						</StackLayout>
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
