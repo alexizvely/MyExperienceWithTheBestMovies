@@ -8,10 +8,12 @@ var viewModel = new observable({
 
 function pageTransitionToExperience() {
     console.log('details-page -> pageTransitionToExperience');
+    console.log('details-page -> pageTransitionToExperience: ' + viewModel.selectedMovie.title);
+    var movie = viewModel.selectedMovie;
     var navigationEntry = {
-            moduleName: "./my-experience-page",
+            moduleName: "my-experience-page",
             context: {
-              selectedMovie: viewModel.selectedMovie
+              selectedMovie: movie
             },
             animated: true,
             navigationTransition: {
@@ -19,7 +21,7 @@ function pageTransitionToExperience() {
             }
         };
       var topmost = frameModule.topmost();
-      topmost.navigate("my-experience-page");
+      topmost.navigate(navigationEntry);
 };
 
 exports.viewModel = viewModel;
