@@ -32,7 +32,7 @@
   "_id": "nativescript-sound@1.0.4",
   "scripts": {},
   "_shasum": "e8ad0aacd8eb5fb4e352fb5ae9fdd2d60de399eb",
-  "_from": "nativescript-sound@latest",
+  "_from": "nativescript-sound@>=1.0.4 <2.0.0",
   "_npmVersion": "2.11.3",
   "_nodeVersion": "0.12.7",
   "_npmUser": {
@@ -50,6 +50,5 @@
     }
   ],
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/nativescript-sound/-/nativescript-sound-1.0.4.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/nativescript-sound/-/nativescript-sound-1.0.4.tgz"
 }

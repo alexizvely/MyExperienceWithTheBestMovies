@@ -33,7 +33,7 @@
   "_id": "nativescript-toast@1.2.0",
   "scripts": {},
   "_shasum": "cbedb82117c0c32204efb22ec7d83e52b5687d87",
-  "_from": "nativescript-toast@latest",
+  "_from": "nativescript-toast@>=1.2.0 <2.0.0",
   "_npmVersion": "2.11.3",
   "_nodeVersion": "0.12.7",
   "_npmUser": {
@@ -51,6 +51,5 @@
     }
   ],
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/nativescript-toast/-/nativescript-toast-1.2.0.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/nativescript-toast/-/nativescript-toast-1.2.0.tgz"
 }

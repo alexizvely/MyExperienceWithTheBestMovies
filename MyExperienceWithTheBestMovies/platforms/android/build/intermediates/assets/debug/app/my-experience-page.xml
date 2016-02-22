@@ -35,13 +35,16 @@
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>
-<!-- 			<TabViewItem title="Rate">
+			<TabViewItem title="Rate">
 				<TabViewItem.view>
 					<StackLayout>
-						<Slider minValue="0" maxValue="10" value="5" />		
+						<Label text="Rate this movie:" class="sliderLabel" textWrap="true" />
+						<Slider minValue="{{ minValue }}" maxValue="{{ maxValue }}" value=" {{ sliderValue }}" />
+						<Label text="My rate is:" class="sliderLabel" />
+                        <Label text="{{ sliderValue }}" class="sliderLabel" />	
 					</StackLayout>       
 				</TabViewItem.view>
-			</TabViewItem> -->
+			</TabViewItem>
 		</TabView.items>
 	</TabView>
 </Page>

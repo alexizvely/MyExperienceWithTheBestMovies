@@ -23,6 +23,12 @@ TextView {
 	padding:15;
 }
 
+.sliderLabel {
+	color: #fbfcb5;
+	padding:15;
+	horizontal-align:center;
+}
+
 .expButtons {
 	margin-bottom:15;
 	margin-top:5;

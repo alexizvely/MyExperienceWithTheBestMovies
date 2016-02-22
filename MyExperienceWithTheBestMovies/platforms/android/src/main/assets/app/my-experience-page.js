@@ -1,3 +1,19 @@
+var vmModule = require("./my-experience-view-model");
+var frameModule = require("ui/frame");
+
+function onNavigatedTo(args) {
+  console.log('my-experience-page-> onNavigatedTo');
+  var page = args.object;
+  var data = vmModule.viewModel;
+  data.selectedMovie = args.object.navigationContext.selectedMovie;
+  page.bindingContext = vmModule.viewModel;
+  console.log("Selected movie: " + args.object.navigationContext.selectedMovie);
+}
+
+exports.onNavigatedTo = onNavigatedTo;
+
+
+
 var vmModule = require("./main-view-model");
 var observable = require("data/observable").Observable;
 var observableArray = require("data/observable-array").ObservableArray;
@@ -36,7 +52,7 @@ var pageData = new observable({
     pictureList: new observableArray([
     	// { img: "test1" },
      //    { img: "test2" },
-     //    { img: "test3" } 
+     //    { img: "test3" }
     ]),
     notes: new observableArray([]),
     "sliderValue": 5,
@@ -57,7 +73,7 @@ function onTakePictureTap(args){
 	}
 	).then(function (result) {
 	  		console.log("Dialog result: " + result);
-	  
+
 		  	if (result) {
 				cameraModule.takePicture({width: 200, height: 200, keepAspectRatio: true})
 				.then(function(picture) {
@@ -72,12 +88,12 @@ function onTakePictureTap(args){
 				// console.log(pageData.pictureList.getItem(0));
 			});
 		}
-	});	
+	});
 }
 exports.onTakePictureTap = onTakePictureTap;
 
 function saveNote(args){
-	
+
 	soundEffect.play();
 
 	dialogs.confirm({
@@ -87,7 +103,7 @@ function saveNote(args){
 	  cancelButtonText: "Cancel",
 	}).then(function (result) {
 	  console.log("Dialog result: " + result);
-	  
+
 	  if (result) {
 			var noteWriteField = view.getViewById(page, "noteWriteField");
 			var note = noteWriteField.text;
@@ -98,12 +114,12 @@ function saveNote(args){
 				makeToast("Note added.");
 			} else {
 				badInputEffect.play();
-				dialogs.alert("Zero length notes not allowed!").then(function (result) {
+				dialogs.alert("Please enter a note.").then(function (result) {
 					makeToast("Note scrapped.");
 				});
 			}
 	    }
-	});	
+	});
 }
 exports.saveNote = saveNote;
 

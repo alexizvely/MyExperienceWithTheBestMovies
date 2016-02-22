@@ -1,6 +1,6 @@
 {
   "name": "nativescript-effects",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "tns-effects.js",
   "description": "A NativeScript plugin that extend animations to include common animation scenarios.",
   "nativescript": {
@@ -35,16 +35,20 @@
   },
   "homepage": "https://github.com/alexziskind1/nativescript-effects",
   "gitHead": "7a5addbe9192a7708fbaac9db42e33f2a156fea6",
-  "_id": "nativescript-effects@0.2.3",
+  "_id": "nativescript-effects@0.2.4",
   "scripts": {},
-  "_shasum": "c1a01f3fe09ea90a1a524aea58e471726c40aeda",
-  "_from": "nativescript-effects@latest",
-  "_resolved": "https://registry.npmjs.org/nativescript-effects/-/nativescript-effects-0.2.3.tgz",
+  "_shasum": "647ffd5c0ffefdc80af5ce7337d15d6b16148527",
+  "_from": "nativescript-effects@>=0.2.3 <0.3.0",
+  "_resolved": "https://registry.npmjs.org/nativescript-effects/-/nativescript-effects-0.2.4.tgz",
   "_npmVersion": "2.11.3",
   "_nodeVersion": "0.12.7",
   "_npmUser": {
     "name": "alexziskind1",
     "email": "alex@nuvious.com"
+  },
+  "dist": {
+    "shasum": "647ffd5c0ffefdc80af5ce7337d15d6b16148527",
+    "tarball": "http://registry.npmjs.org/nativescript-effects/-/nativescript-effects-0.2.4.tgz"
   },
   "maintainers": [
     {
@@ -52,14 +56,9 @@
       "email": "alex@nuvious.com"
     }
   ],
-  "dist": {
-    "shasum": "c1a01f3fe09ea90a1a524aea58e471726c40aeda",
-    "tarball": "http://registry.npmjs.org/nativescript-effects/-/nativescript-effects-0.2.3.tgz"
-  },
   "_npmOperationalInternal": {
-    "host": "packages-6-west.internal.npmjs.com",
-    "tmp": "tmp/nativescript-effects-0.2.3.tgz_1455745297156_0.997998422011733"
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/nativescript-effects-0.2.4.tgz_1456091150768_0.41768571827560663"
   },
-  "directories": {},
-  "readme": "ERROR: No README data found!"
+  "directories": {}
 }
