@@ -12,6 +12,13 @@ var mainViewModel = new observable({
   moviesList: []
 });
 
+function updateButtonText(){
+  if (true) {
+
+  }
+      button.text='Watched';
+}
+
 mainViewModel.addEventListener(observable.propertyChangeEvent, function (args) {
   console.log('main-page -> addEventListener');
   if(args.propertyName == 'filter_string'){
@@ -31,7 +38,14 @@ function displayPage(){
   }
   for(var i=(page-1)*4, len=(page-1)*4 + 4; i<len; i+=1){
     if(i<global.movies.length){
-      mainViewModel.moviesList.push(global.movies[i]);
+      var movieItem = global.movies[i];
+      movieItem.watchedText = 'Not Watched'
+      for (var y = 0; y < global.userExperiencesData.length; y++) {
+        if(global.userExperiencesData[y].IdIMDB === movieItem.IdIMDB){
+          movieItem.watchedText ='Watched'
+        }
+      }
+      mainViewModel.moviesList.push(movieItem);
     }
   }
   mainViewModel.last_page = page;
@@ -51,7 +65,14 @@ function updateList(){
   mainViewModel.moviesList=[];
   for(var i in global.movies){
      if(global.movies[i].Title.indexOf(mainViewModel.filter_string) > -1){
-       mainViewModel.moviesList.push(global.movies[i]);
+       var movieItem = global.movies[i];
+       movieItem.watchedText = 'Not Watched'
+       for (var y = 0; y < global.userExperiencesData.length; y++) {
+         if(global.userExperiencesData[y].IdIMDB === movieItem.IdIMDB){
+           movieItem.watchedText ='Watched'
+         }
+       }
+       mainViewModel.moviesList.push(movieItem);
      }
   }
 };

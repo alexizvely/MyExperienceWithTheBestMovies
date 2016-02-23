@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onNavigatedTo">
 	<Page.actionBar>
-		<ActionBar title="{{'My experience with ' +selectedMovie.title}}" class="actionBar"></ActionBar>
+		<ActionBar title="{{'My experience with ' + selectedMovie.Title}}" class="actionBar"></ActionBar>
 	</Page.actionBar>
 	<TabView class="cell">
 		<TabView.items>
@@ -24,9 +24,9 @@
 						<Image id="image" />
 						<Button text="Take Picture" class="expButtons" id="pictureButton" onTap="onTakePictureTap" />
 						<StackLayout class="cell">
-							<ListView items="{{ pictureList }}">
+							<ListView id="imageList" items="{{ pictureList }}" height="300">
 								<ListView.itemTemplate>
-									<Label text="{{ img }}" class="textLabel"/>
+									<Image class="image" src="{{ $value }}" stretch="aspectFill" width = "200"/>
 								</ListView.itemTemplate>
 							</ListView>
 						</StackLayout>
@@ -39,7 +39,8 @@
 						<Label text="Rate this movie:" class="sliderLabel" textWrap="true" />
 						<Slider minValue="{{ minSliderValue }}" maxValue="{{ maxSliderValue }}" value=" {{ sliderValue }}" />
 						<Label text="My rate is:" class="sliderLabel" />
-                        <Label text="{{ sliderValue }}" class="sliderLabel" />
+            <Label text="{{ sliderValue }}" class="sliderLabel" />
+						<Button text="Save Rating" class="expButtons" id="saveSliderButton" onTap="onSaveSlider" />
 					</StackLayout>
 				</TabViewItem.view>
 			</TabViewItem>

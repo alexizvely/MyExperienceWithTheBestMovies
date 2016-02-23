@@ -13,7 +13,7 @@
 					<Label class="movieInfo" text="{{'Year: ' + Year }}" col = "1" row = "1" />
 					<Label class="movieInfo" text="{{'Rating: '+ Rating }}" col = "2" row = "1" />
 					<Label class="movieInfo" text="{{'Director: '+ Director }}" textWrap = "true" col = "1" row = "2" colSpan="2" />
-					<Button class="watched" id="{{ IdIMDB }}" text="Not watched" col = "3" row = "0" rowspan = "3" tap="onButtonItemTap"/>
+					<Button class="watched" id="{{ IdIMDB }}" text="{{watchedText}}" col = "3" row = "0" rowspan = "3" tap="onButtonItemTap"/>
 				</GridLayout>
 			</ListView.itemTemplate>
 		</ListView>

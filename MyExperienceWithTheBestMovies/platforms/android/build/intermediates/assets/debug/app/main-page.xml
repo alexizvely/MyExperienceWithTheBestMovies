@@ -7,13 +7,13 @@
 		<TextField text="{{current_page}}"/>
 		<ListView id="mainLv" items="{{moviesList}}">
 			<ListView.itemTemplate>
-				<GridLayout id="{{ idIMDB }}" class="cell" columns = "90, *, *, 100" rows = "50, 25, 25" tap="onLvItemTap">
-					<Image class="image" src="{{image}}" stretch="aspectFill" col = "0" row = "0" rowspan = "3" />
-					<Label class="movieTitle" text="{{ title }}" textWrap = "true" col = "1" row = "0" colSpan="2"  />
-					<Label class="movieInfo" text="{{'Year: ' + year }}" col = "1" row = "1" />
-					<Label class="movieInfo" text="{{'Rating: '+ imdbRating }}" col = "2" row = "1" />
-					<Label class="movieInfo" text="{{'Director: '+ director }}" textWrap = "true" col = "1" row = "2" colSpan="2" />
-					<Button class="watched" id="{{ idIMDB }}" text="Not watched" col = "3" row = "0" rowspan = "3" tap="onButtonItemTap"/>
+				<GridLayout id="{{ IdIMDB }}" class="cell" columns = "90, *, *, 100" rows = "50, 25, 25" tap="onLvItemTap">
+					<Image class="image" src="{{UrlPoster}}" stretch="aspectFill" col = "0" row = "0" rowspan = "3" />
+					<Label class="movieTitle" text="{{ Title }}" textWrap = "true" col = "1" row = "0" colSpan="2"  />
+					<Label class="movieInfo" text="{{'Year: ' + Year }}" col = "1" row = "1" />
+					<Label class="movieInfo" text="{{'Rating: '+ Rating }}" col = "2" row = "1" />
+					<Label class="movieInfo" text="{{'Director: '+ Director }}" textWrap = "true" col = "1" row = "2" colSpan="2" />
+					<Button class="watched" id="{{ IdIMDB }}" text="{{watchedText}}" col = "3" row = "0" rowspan = "3" tap="onButtonItemTap"/>
 				</GridLayout>
 			</ListView.itemTemplate>
 		</ListView>

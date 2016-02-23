@@ -4,7 +4,7 @@ var viewModel = new observable({
     selectedMovie: {},
     pictureList: [],
     notes: [],
-    sliderValue: 5,
+    sliderValue: 1,
     minSliderValue: 0,
     maxSliderValue: 10
 });
