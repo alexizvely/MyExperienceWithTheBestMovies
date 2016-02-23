@@ -43,3 +43,7 @@ TextView {
 #image {
 	height: 150;
 }
+
+#saveSliderButton {
+	background-color: #fad417;
+}

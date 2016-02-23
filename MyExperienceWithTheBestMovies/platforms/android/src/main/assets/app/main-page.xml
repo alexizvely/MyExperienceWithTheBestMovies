@@ -4,7 +4,7 @@
 	</Page.actionBar>
 	<StackLayout id="mainScreen">
 		<TextField text="{{filter_string}}" hint="Enter search word here..."/>
-		<TextField text="{{current_page}}"/>
+		<!-- <TextField text="{{current_page}}"/> -->
 		<ListView id="mainLv" items="{{moviesList}}">
 			<ListView.itemTemplate>
 				<GridLayout id="{{ IdIMDB }}" class="cell" columns = "90, *, *, 100" rows = "50, 25, 25" tap="onLvItemTap">

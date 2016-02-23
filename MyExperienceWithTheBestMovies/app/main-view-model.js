@@ -12,19 +12,12 @@ var mainViewModel = new observable({
   moviesList: []
 });
 
-function updateButtonText(){
-  if (true) {
-
-  }
-      button.text='Watched';
-}
-
 mainViewModel.addEventListener(observable.propertyChangeEvent, function (args) {
   console.log('main-page -> addEventListener');
   if(args.propertyName == 'filter_string'){
       updateList();
     }
-  if(args.propertyName === 'current_page'){
+  if(args.propertyName == 'current_page'){
         displayPage();
       }
 });
@@ -73,6 +66,7 @@ function updateList(){
          }
        }
        mainViewModel.moviesList.push(movieItem);
+
      }
   }
 };
@@ -110,7 +104,7 @@ function pageTransitionData(args, pageString){
     topmost.navigate(navigationEntry);
 };
 
-updateList();
 displayPage();
+updateList();
 
 exports.mainViewModel = mainViewModel;
